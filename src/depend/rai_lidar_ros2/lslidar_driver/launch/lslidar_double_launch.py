@@ -1,4 +1,4 @@
-
+#!/usr/bin/python3
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch_ros.actions import LifecycleNode
@@ -16,7 +16,7 @@ def generate_launch_description():
                      
     driver_node_1 = LifecycleNode(package='lslidar_driver',
                                 executable='lslidar_driver_node',
-                                name='lslidar_driver_node',		
+                                name='lslidar_driver_node',		#设置激光数据topic名称
                                 output='screen',
                                 emulate_tty=True,
                                 namespace='lidar_1',
@@ -25,7 +25,7 @@ def generate_launch_description():
 
     driver_node_2 = LifecycleNode(package='lslidar_driver',
                                 executable='lslidar_driver_node',
-                                name='lslidar_driver_node',		
+                                name='lslidar_driver_node',		#设置激光数据topic名称
                                 output='screen',
                                 emulate_tty=True,
                                 namespace='lidar_2',
