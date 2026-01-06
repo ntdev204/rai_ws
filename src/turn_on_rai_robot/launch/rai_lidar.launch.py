@@ -9,10 +9,10 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 def generate_launch_description():
     Lslidar_dir = get_package_share_directory('lslidar_driver')
     Lslidar_launch_dir = os.path.join(Lslidar_dir, 'launch')
-    Ld14_dir = get_package_share_directory('ldlidar_sl_ros2')
-    Ld14_launch_dir = os.path.join(Ld14_dir, 'launch')
-    Ld06_dir = get_package_share_directory('ldlidar_stl_ros2')
-    Ld06_launch_dir = os.path.join(Ld14_dir, 'launch')
+#     Ld14_dir = get_package_share_directory('ldlidar_sl_ros2')
+#     Ld14_launch_dir = os.path.join(Ld14_dir, 'launch')
+#     Ld06_dir = get_package_share_directory('ldlidar_stl_ros2')
+#     Ld06_launch_dir = os.path.join(Ld14_dir, 'launch')
     Lsm10_m10_uart = IncludeLaunchDescription(
             PythonLaunchDescriptionSource(os.path.join(Lslidar_launch_dir, 'lsm10_uart_launch.py')),)
     Lsm10_m10_net = IncludeLaunchDescription(
@@ -25,10 +25,10 @@ def generate_launch_description():
             PythonLaunchDescriptionSource(os.path.join(Lslidar_launch_dir, 'lsn10_launch.py')),)
     Lsn10p = IncludeLaunchDescription(
             PythonLaunchDescriptionSource(os.path.join(Lslidar_launch_dir, 'lsn10p_launch.py')),)
-    Ld14 = IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(os.path.join(Ld14_launch_dir, 'ld14.launch.py')),)
-    Ld06 = IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(os.path.join(Ld06_launch_dir, 'ld06.launch.py')),)
+    # Ld14 = IncludeLaunchDescription(
+    #         PythonLaunchDescriptionSource(os.path.join(Ld14_launch_dir, 'ld14.launch.py')),)
+    # Ld06 = IncludeLaunchDescription(
+    #         PythonLaunchDescriptionSource(os.path.join(Ld06_launch_dir, 'ld06.launch.py')),)
     ld = LaunchDescription()
     '''
     Please select your lidar here, options include:
