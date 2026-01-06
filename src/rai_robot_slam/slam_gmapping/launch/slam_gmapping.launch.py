@@ -17,11 +17,11 @@ def generate_launch_description():
     rai_lidar = IncludeLaunchDescription(
             PythonLaunchDescriptionSource(os.path.join(launch_dir, 'rai_lidar.launch.py')),
     )
-    rai_robot = IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(os.path.join(launch_dir, 'turn_on_rai_robot.launch.py')),
-    )
+    # rai_robot = IncludeLaunchDescription(
+    #         PythonLaunchDescriptionSource(os.path.join(launch_dir, 'turn_on_rai_robot.launch.py')),
+    # )
     return LaunchDescription([
-        rai_robot,
+
         rai_lidar,
         SetEnvironmentVariable('RCUTILS_LOGGING_BUFFERED_STREAM', '1'),
         launch_ros.actions.Node(
