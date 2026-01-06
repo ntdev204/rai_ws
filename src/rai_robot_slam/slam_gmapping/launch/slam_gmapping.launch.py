@@ -17,16 +17,14 @@ def generate_launch_description():
     rai_lidar = IncludeLaunchDescription(
             PythonLaunchDescriptionSource(os.path.join(launch_dir, 'rai_lidar.launch.py')),
     )
-    # rai_robot = IncludeLaunchDescription(
-    #         PythonLaunchDescriptionSource(os.path.join(launch_dir, 'turn_on_rai_robot.launch.py')),
-    # )
-    return LaunchDescription([
 
+    return LaunchDescription([
         rai_lidar,
         SetEnvironmentVariable('RCUTILS_LOGGING_BUFFERED_STREAM', '1'),
         launch_ros.actions.Node(
             package='slam_gmapping', 
             executable='slam_gmapping', 
             output='screen', 
-            parameters=[{'use_sim_time':use_sim_time}]),
+            parameters=[{'use_sim_time': use_sim_time}]
+        ),
     ])

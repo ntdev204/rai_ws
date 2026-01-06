@@ -38,5 +38,5 @@ def generate_launch_description():
     according to the user guide file.
     2.If you are using m10 lidar, please pay attention to distinguish whether it is m10p or not.
     '''
-    ld.add_action(Lsm10_m10p_uart)
+    ld.add_action(Lsn10p)
     return ld
